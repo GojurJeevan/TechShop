@@ -34,7 +34,7 @@ export const Header = () => {
               className="mr-5 mt-4 text-xl cursor-pointer"
             />
             <span
-              className=" absolute top-full left-1/2
+              className=" absolute top-full left-1/2 -translate-x-1/2 mt-2
         opacity-0 group-hover:opacity-100
         bg-black text-white text-sm px-2 py-1 rounded
         transition"
