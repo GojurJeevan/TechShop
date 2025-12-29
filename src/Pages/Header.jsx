@@ -5,6 +5,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Banner } from "../banner/Banner";
+import { SmallSlick } from "../slick/SmallSlick";
+import { Categories } from "../categories/Categories";
 
 export const Header = () => {
   let name = "Tech-Shop";
@@ -59,6 +61,10 @@ export const Header = () => {
         </div>
       </div>
       <Banner />
+      <div className="hidden md:block">
+        <SmallSlick />
+      </div>
+      <Categories />
     </>
   );
 };

@@ -1,6 +1,4 @@
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import banner1 from "../assets/products/banner1.png";
 
@@ -17,9 +15,11 @@ export default function Slide() {
     <>
       <Slider {...settings}>
         <div>
-          <div className="flex justify-between">
-            <p className="text-5xl">Hello</p>
-            <div>
+          <div className="flex justify-between mt-40">
+            <div className="text-white text-5xl font-bold">
+              Keep The Noise <br />Out, Or In. You Choose.
+            </div>
+            <div className="hidden lg:block">
               <img src={banner1} alt="Banner 1" className="h-100" />
             </div>
           </div>
