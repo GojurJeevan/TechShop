@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { categoryMenu } from "./categoryMenu";
 
 export const Categories = () => {
@@ -8,11 +9,11 @@ export const Categories = () => {
         Top Products
       </div>
 
-      <div className="flex justify-evenly mt-20 text-xl opacity-60">
+      <div className="flex justify-evenly mt-20 text-xl">
         {categoryMenu.map((item) => (
-          <div key={item.id} className={`${item.checked ? "bg-red-500" : "bg-transparent opacity-60"}`}>
-            <button>{item.label}</button>
-          </div>
+          <Link key={item.id} to={item.path} className={`${item.checked ? "bg-red-600 hover:bg-red-700" : "bg-transparent opacity-60"} rounded`}>
+                    {item.label}
+          </Link>
         ))}
       </div>
     </>

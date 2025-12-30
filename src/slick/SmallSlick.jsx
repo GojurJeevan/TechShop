@@ -20,7 +20,7 @@ export const SmallSlick = () => {
 
       <Slider {...settings}>
         {productsData.map((item) => (
-          <div className="mt-20 ml-20">
+          <div className="mt-20">
             <p className="opacity-60">{item.title}</p>
             <img src={item.heroImage} alt="Hello" className="w-50" />
             <div className="flex gap-3 mt-5">

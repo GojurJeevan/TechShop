@@ -1,6 +1,6 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
-export const footMenu = [
+export const footerData = [
     {
         id: 1,
         title: "Help",
