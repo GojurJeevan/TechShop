@@ -26,6 +26,7 @@ const productsData = [
     {
         id: 2,
         tag: "featured-product",
+        heroImage: "/images/products/boat518-1.png",
         images: [
             "/images/products/boat518-1.png",
             "/images/products/boat518-2.png",
@@ -71,6 +72,7 @@ const productsData = [
     },
     {
         id: 4,
+        heroImage: "/images/products/boat110-1.png",
         images: [
             "/images/products/boat110-1.png",
             "/images/products/boat110-2.png",
@@ -92,6 +94,7 @@ const productsData = [
     },
     {
         id: 5,
+        heroImage: "/images/products/boat410-1.png",
         images: [
             "/images/products/boat410-1.png",
             "/images/products/boat410-2.png",
@@ -113,6 +116,7 @@ const productsData = [
     },
     {
         id: 6,
+        heroImage: "/images/products/jbl200bt-1.png",
         images: [
             "/images/products/jbl200bt-1.png",
             "/images/products/jbl200bt-2.png",
@@ -136,12 +140,12 @@ const productsData = [
         id: 7,
         tag: "hero-product",
         tagline: "Give your favourite music a boost.",
-        heroImage: "/images/products/sonyxb910n-1.png",
+        heroImage: "/images/products/sonyXb910n-1.png",
         images: [
-            "/images/products/sonyxb910n-1.png",
-            "/images/products/sonyxb910n-2.png",
-            "/images/products/sonyxb910n-3.png",
-            "/images/products/sonyxb910n-4.png",
+            "/images/products/sonyXb910n-1.png",
+            "/images/products/sonyXb910n-2.png",
+            "/images/products/sonyXb910n-3.png",
+            "/images/products/sonyXb910n-4.png",
         ],
         brand: "Sony",
         title: "Sony WH-XB910N",
@@ -158,6 +162,7 @@ const productsData = [
     },
     {
         id: 8,
+        heroImage: "/images/products/jbl760nc-1.png",
         tag: "featured-product",
         images: [
             "/images/products/jbl760nc-1.png",
@@ -180,6 +185,7 @@ const productsData = [
     },
     {
         id: 9,
+        heroImage: "/images/products/boat255r-1.png",
         tag: "featured-product",
         images: [
             "/images/products/boat255r-1.png",
@@ -202,6 +208,7 @@ const productsData = [
     },
     {
         id: 10,
+        heroImage: "/images/products/jbl100-1.png",
         images: [
             "/images/products/jbl100-1.png",
             "/images/products/jbl100-2.png",
@@ -223,6 +230,7 @@ const productsData = [
     },
     {
         id: 11,
+        heroImage: "/images/products/sony1000xm4-1.png",
         images: [
             "/images/products/sony1000xm4-1.png",
             "/images/products/sony1000xm4-2.png",
@@ -244,6 +252,7 @@ const productsData = [
     },
     {
         id: 12,
+        heroImage: "/images/products/boat228-1.png",
         images: [
             "/images/products/boat228-1.png",
             "/images/products/boat228-2.png",
@@ -265,6 +274,7 @@ const productsData = [
     },
     {
         id: 13,
+        heroImage: "/images/products/jbl-endu-1.png",
         tag: "featured-product",
         images: [
             "/images/products/jbl-endu-1.png",
@@ -288,6 +298,7 @@ const productsData = [
     {
         id: 14,
         tag: "featured-product",
+        heroImage:"/images/products/boat203-1.png",
         images: [
             "/images/products/boat203-1.png",
             "/images/products/boat203-2.png",
@@ -309,11 +320,12 @@ const productsData = [
     },
     {
         id: 15,
+        heroImage:"/images/products/sonyCh710n-1.png",
         images: [
-            "/images/products/sonych710n-1.png",
-            "/images/products/sonych710n-2.png",
-            "/images/products/sonych710n-3.png",
-            "/images/products/sonych710n-4.png",
+            "/images/products/sonyCh710n-1.png",
+            "/images/products/sonyCh710n-2.png",
+            "/images/products/sonyCh710n-3.png",
+            "/images/products/sonyCh710n-4.png",
         ],
         brand: "Sony",
         title: "Sony WH-CH710N",
@@ -330,6 +342,7 @@ const productsData = [
     },
     {
         id: 16,
+        heroImage:"/images/products/jbl500bt-1.png",
         images: [
             "/images/products/jbl500bt-1.png",
             "/images/products/jbl500bt-2.png",
@@ -351,6 +364,7 @@ const productsData = [
     },
     {
         id: 17,
+        heroImage:"/images/products/boat381-1.png",
         images: [
             "/images/products/boat381-1.png",
             "/images/products/boat381-2.png",
@@ -372,6 +386,7 @@ const productsData = [
     },
     {
         id: 18,
+        heroImage:"/images/products/sony-ex14ap-1.png",
         images: [
             "/images/products/sony-ex14ap-1.png",
             "/images/products/sony-ex14ap-2.png",
@@ -393,11 +408,12 @@ const productsData = [
     },
     {
         id: 19,
+        heroImage:"/images/products/sonyXb400-1.png",
         images: [
-            "/images/products/sonyxb400-1.png",
-            "/images/products/sonyxb400-2.png",
-            "/images/products/sonyxb400-3.png",
-            "/images/products/sonyxb400-4.png",
+            "/images/products/sonyXb400-1.png",
+            "/images/products/sonyXb400-2.png",
+            "/images/products/sonyXb400-3.png",
+            "/images/products/sonyXb400-4.png",
         ],
         brand: "Sony",
         title: "Sony WI-XB400",

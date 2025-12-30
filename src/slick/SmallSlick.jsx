@@ -19,11 +19,18 @@ export const SmallSlick = () => {
       </h2>
 
       <Slider {...settings}>
-        {productsData.map(item => 
-          <div>
-            <img src={item.heroImage} alt="Hello" />
+        {productsData.map((item) => (
+          <div className="mt-20 ml-20">
+            <p className="opacity-60">{item.title}</p>
+            <img src={item.heroImage} alt="Hello" className="w-50" />
+            <div className="flex gap-3 mt-5">
+              <p className="text-xl">₹{item.finalPrice}</p>
+              <p className="line-through text-xl opacity-50">
+                ₹{item.originalPrice}
+              </p>
+            </div>
           </div>
-        )}
+        ))}
       </Slider>
     </div>
   );

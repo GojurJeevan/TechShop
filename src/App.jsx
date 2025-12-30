@@ -1,5 +1,6 @@
 import './App.css'
 import { MainLayout } from './layout/MainLayout'
+import { Footer } from './footer/Footer'
 
 
 export const App = () =>{
@@ -7,6 +8,7 @@ export const App = () =>{
     <>
         <div className='bg-black text-white'>
           <MainLayout />
+          <Footer />
         </div>
     </>
   )
