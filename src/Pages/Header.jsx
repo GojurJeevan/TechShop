@@ -4,16 +4,15 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { Banner } from "../banner/Banner";
-import { SmallSlick } from "../slick/SmallSlick";
-import { Categories } from "../categories/Categories";
+
 
 export const Header = () => {
-  let name = "Tech-Shop";
 
-  return (
-    <>
-      <div className="flex justify-between bg-black text-white h-17">
+    let name = "Tech-Shop";
+
+    return(
+        <>
+            <div className="flex justify-between bg-black text-white h-17">
         <div className="font-bold text-2xl mt-3.5">{name}</div>
         <div className="flex">
           <div className="relative group inline-block">
@@ -60,11 +59,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <Banner />
-      <div className="hidden md:block">
-        <SmallSlick />
-      </div>
-      <Categories />
-    </>
-  );
-};
+        </>
+    )
+}

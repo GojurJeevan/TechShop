@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
-import { categoryMenu } from "./categoryMenu";
+import { useState } from "react";
+import { AllCards } from "../cards/AllCards";
 
 export const Categories = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
 
   return (
     <>
@@ -9,13 +10,15 @@ export const Categories = () => {
         Top Products
       </div>
 
-      <div className="flex justify-evenly mt-20 text-xl">
-        {categoryMenu.map((item) => (
-          <Link key={item.id} to={item.path} className={`${item.checked ? "bg-red-600 hover:bg-red-700" : "bg-transparent opacity-60"} rounded`}>
-                    {item.label}
-          </Link>
-        ))}
+      <div className="flex justify-evenly mt-20 mb-20 text-2xl opacity-75">
+        <button onClick={() => setActiveCategory("All")}>All</button>
+        <button onClick={() => setActiveCategory("Headphones")}>Headphones</button>
+        <button onClick={() => setActiveCategory("Earbuds")}>Earbuds</button>
+        <button onClick={() => setActiveCategory("Earphones")}>Earphones</button>
+        <button onClick={() => setActiveCategory("Neckbands")}>Neckbands</button>
       </div>
+
+      <AllCards category={activeCategory} />
     </>
   );
 };
