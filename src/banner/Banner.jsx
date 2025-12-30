@@ -1,4 +1,4 @@
-import Slide from "../slick/Slide"
+import Slide from "../slide/Slide"
 
 export const Banner = () => {
     return(
