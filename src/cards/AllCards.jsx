@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import productsData from "../productsdata/ProductsData";
 
 export const AllCards = ({ category }) => {
@@ -7,13 +7,11 @@ export const AllCards = ({ category }) => {
       ? productsData.slice(0, 11)
       : productsData.filter((item) => item.category === category);
 
-      let navigate = useNavigate();
+  let navigate = useNavigate();
 
-      const submitButton = () =>{
-        navigate("/products")
-      }
-
-      
+  const submitButton = () => {
+    navigate("/products");
+  };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
@@ -22,23 +20,25 @@ export const AllCards = ({ category }) => {
           key={item.id}
           className="bg-gray-900 border border-gray-800 rounded-lg p-4 flex flex-col justify-between hover:border-red-600 transition"
         >
-          <div className="flex justify-center">
-            <img
-              src={item.heroImage}
-              alt={item.title}
-              className="h-36 object-contain"
-            />
-          </div>
+          <Link to={`/product/${item.id}`}>
+            <div className="flex justify-center">
+              <img
+                src={item.heroImage}
+                alt={item.title}
+                className="h-36 object-contain"
+              />
+            </div>
 
-          <div className="flex items-center gap-1 mt-3">
-            {Array(item.rateCount)
-              .fill(0)
-              .map((_, i) => (
-                <span key={i} className="text-red-500 text-sm">
-                  ★
-                </span>
-              ))}
-          </div>
+            <div className="flex items-center gap-1 mt-3">
+              {Array(item.rateCount)
+                .fill(0)
+                .map((_, i) => (
+                  <span key={i} className="text-red-500 text-sm">
+                    ★
+                  </span>
+                ))}
+            </div>
+          </Link>
 
           <h2 className="text-white font-semibold mt-2">{item.title}</h2>
 
@@ -59,7 +59,10 @@ export const AllCards = ({ category }) => {
         </div>
       ))}
 
-      <button className="bg-[#111] border border-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:border-red-600 transition cursor-pointer" onClick={submitButton}>
+      <button
+        className="bg-[#111] border border-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:border-red-600 transition cursor-pointer"
+        onClick={submitButton}
+      >
         <p className="text-lg">Browse All Products →</p>
       </button>
     </div>

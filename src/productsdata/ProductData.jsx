@@ -10,7 +10,7 @@ export const ProductData = () => {
   return (
     <>
       <Header />
-      <div className="flex">
+      <div className="flex ml-20">
         <div>
           {product.images.map((item, index) => (
             <img
@@ -36,16 +36,45 @@ export const ProductData = () => {
                     ★
                   </span>
                 ))}
-                <div className="border ml-2 mr-2 opacity-60"></div>
-                <p className="opacity-80 font-light">{product.ratings} Ratings</p>
+              <div className="border ml-2 mr-2 opacity-60"></div>
+              <p className="opacity-80 font-light">{product.ratings} Ratings</p>
             </div>
-            <div className="border mt-8 opacity-20 w-xl font-extralight"></div>
-            <div>
-                <div className="flex">
-                    <p>{product.finalPrice}</p>
-                    <p>{product.originalPrice}</p>
+            <div className="border mt-8 opacity-20 w-md font-extralight"></div>
+            <div className="flex">
+              <div>
+                <div className="flex gap-3">
+                  <p className="font-extrabold text-3xl mt-4 opacity-85">
+                    ₹{product.finalPrice}
+                  </p>
+                  <p className="line-through font-extrabold text-xl mt-5 opacity-65">
+                    ₹{product.originalPrice}
+                  </p>
                 </div>
+                <p className="text-green-700 mt-3 text-xl">
+                  You save: ₹{product.originalPrice - product.finalPrice}
+                </p>
+                <p className="font-light opacity-60">
+                  (Inclusive of all taxes)
+                </p>
+              </div>
+              <div className="my-12 ml-20">
+                <span className="inline-block px-5 py-2 font-medium bg-green-700 text-white rounded">
+                  In Stock
+                </span>
+              </div>
             </div>
+          </div>
+          <div className="border mt-8 opacity-20 w-md font-extralight"></div>
+          <div>
+            <p className="mt-10 font-bold opacity-75">Offers and Discount</p>
+            <div className="flex gap-5 mt-8">
+              <div className="border w-50 h-15 rounded  p-2 text-gray-300">No Cost EMI on Credit Card</div>
+              <div className="border w-50 h-15 rounded  p-2 text-gray-300">Pay Later & Avail Cashback</div>
+            </div>
+          </div>
+          <div className="border mt-8 opacity-20 w-md font-extralight"></div>
+          <div className="my-10">
+            <button className="w-50 h-10 bg-red-700 rounded cursor-pointer">Add to Cart</button>
           </div>
         </div>
       </div>
