@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import productsData from "./ProductsData";
 import { Header } from "../Pages/Header";
+import { Details } from "../details/Details";
 
 export const ProductData = () => {
   const { id } = useParams();
@@ -78,6 +79,7 @@ export const ProductData = () => {
           </div>
         </div>
       </div>
+      <Details />
     </>
   );
 };

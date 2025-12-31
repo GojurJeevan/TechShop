@@ -4,6 +4,7 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 
 
 export const Header = () => {
@@ -13,7 +14,7 @@ export const Header = () => {
     return(
         <>
             <div className="flex justify-between bg-black text-white h-17">
-        <div className="font-bold text-2xl mt-3.5">{name}</div>
+        <Link className="font-bold text-2xl mt-3.5" to={"/"}>{name}</Link>
         <div className="flex">
           <div className="relative group inline-block">
             <FontAwesomeIcon
