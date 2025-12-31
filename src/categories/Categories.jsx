@@ -11,11 +11,11 @@ export const Categories = () => {
       </div>
 
       <div className="flex justify-evenly mt-20 mb-20 text-2xl opacity-75">
-        <button onClick={() => setActiveCategory("All")}>All</button>
-        <button onClick={() => setActiveCategory("Headphones")}>Headphones</button>
-        <button onClick={() => setActiveCategory("Earbuds")}>Earbuds</button>
-        <button onClick={() => setActiveCategory("Earphones")}>Earphones</button>
-        <button onClick={() => setActiveCategory("Neckbands")}>Neckbands</button>
+        <button onClick={() => setActiveCategory("All")} className="hover:bg-red-700 rounded">All</button>
+        <button onClick={() => setActiveCategory("Headphones")} className="hover:bg-red-700 rounded">Headphones</button>
+        <button onClick={() => setActiveCategory("Earbuds")} className="hover:bg-red-700 rounded">Earbuds</button>
+        <button onClick={() => setActiveCategory("Earphones")} className="hover:bg-red-700 rounded">Earphones</button>
+        <button onClick={() => setActiveCategory("Neckbands")} className="hover:bg-red-700 rounded">Neckbands</button>
       </div>
 
       <AllCards category={activeCategory} />

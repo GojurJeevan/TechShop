@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import productsData from "../productsdata/ProductsData";
 
 export const AllCards = ({ category }) => {
@@ -5,6 +6,14 @@ export const AllCards = ({ category }) => {
     category === "All"
       ? productsData.slice(0, 11)
       : productsData.filter((item) => item.category === category);
+
+      let navigate = useNavigate();
+
+      const submitButton = () =>{
+        navigate("/products")
+      }
+
+      
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
@@ -50,9 +59,9 @@ export const AllCards = ({ category }) => {
         </div>
       ))}
 
-      <div className="bg-[#111] border border-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:border-red-600 transition cursor-pointer">
+      <button className="bg-[#111] border border-gray-800 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:border-red-600 transition cursor-pointer" onClick={submitButton}>
         <p className="text-lg">Browse All Products →</p>
-      </div>
+      </button>
     </div>
   );
 };

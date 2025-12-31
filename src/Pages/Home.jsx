@@ -13,6 +13,7 @@ export const Home = () => {
         <SmallSlick />
       </div>
       <Categories />
+      <Header />
     </>
   );
 };
