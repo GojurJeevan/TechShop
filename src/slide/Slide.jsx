@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import productsData from "../productsdata/ProductsData";
 import { useCallback, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Slide() {
   var settings = {
@@ -18,6 +19,13 @@ export default function Slide() {
 
   const finalTagline = useMemo(()=> taglineFilter(),[taglineFilter])
 
+
+  let navigate = useNavigate();
+
+  const shopProduct = (id) =>{
+    navigate(`/product/${id}`)
+  }
+
   return (
     <>
       <Slider {...settings}>
@@ -31,7 +39,7 @@ export default function Slide() {
                   <p className="text-xl">₹{item.finalPrice}</p>
                   <p className="line-through text-xl opacity-50">₹{item.originalPrice}</p>
                 </div>
-                <button className="mt-5 border border-red-700 bg-red-700 rounded h-10 w-30">Shop Now</button>
+                <button className="mt-5 border border-red-700 bg-red-700 rounded h-10 w-30 cursor-pointer" onClick={()=>shopProduct(item.id)}>Shop Now</button>
               </div>
               <div>
                 <img src={item.heroImage} alt="" className="h-100"/>

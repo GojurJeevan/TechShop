@@ -5,7 +5,7 @@ import { Review } from "../review/Review";
 
 export const Details = () => {
 
-    const [activeTab,setActiveTab] = useState("")
+    const [activeTab,setActiveTab] = useState("specifications")
 
   return (
     <>
@@ -15,9 +15,10 @@ export const Details = () => {
         <button className=" hover:bg-red-600 rounded w-30 h-8 cursor-pointer" onClick={()=>setActiveTab("review")}>Reviews</button>
       </div>
 
-      {activeTab == "specifications" && <ProductType/>}
+      {activeTab == "specifications" && <ProductType />}
       {activeTab == "overview" && <Overview/>}
       {activeTab == "review" && <Review/>}
+
     </>
   );
 };

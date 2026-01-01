@@ -2,11 +2,16 @@ import { useParams } from "react-router-dom";
 import productsData from "./ProductsData";
 import { Header } from "../Pages/Header";
 import { Details } from "../details/Details";
+import { RelatedProducts } from "../related/RelatedProducts";
 
 export const ProductData = () => {
   const { id } = useParams();
 
   const product = productsData.find((item) => item.id === Number(id));
+
+  if (!product) {
+    return <p className="text-center mt-20 text-xl">Product not found</p>;
+  }
 
   return (
     <>
@@ -69,17 +74,25 @@ export const ProductData = () => {
           <div>
             <p className="mt-10 font-bold opacity-75">Offers and Discount</p>
             <div className="flex gap-5 mt-8">
-              <div className="border w-50 h-15 rounded  p-2 text-gray-300">No Cost EMI on Credit Card</div>
-              <div className="border w-50 h-15 rounded  p-2 text-gray-300">Pay Later & Avail Cashback</div>
+              <div className="border w-50 h-15 rounded  p-2 text-gray-300">
+                No Cost EMI on Credit Card
+              </div>
+              <div className="border w-50 h-15 rounded  p-2 text-gray-300">
+                Pay Later & Avail Cashback
+              </div>
             </div>
           </div>
           <div className="border mt-8 opacity-20 w-md font-extralight"></div>
           <div className="my-10">
-            <button className="w-50 h-10 bg-red-700 rounded cursor-pointer">Add to Cart</button>
+            <button className="w-50 h-10 bg-red-700 rounded cursor-pointer">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
       <Details />
+
+      <RelatedProducts />
     </>
   );
 };

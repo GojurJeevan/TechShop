@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import productsData from "../productsdata/ProductsData";
+import { Link } from "react-router-dom";
 
 export const SmallSlick = () => {
   const settings = {
@@ -20,16 +21,26 @@ export const SmallSlick = () => {
 
       <Slider {...settings}>
         {productsData.map((item) => (
-          <div className="mt-20">
-            <p className="opacity-60">{item.title}</p>
-            <img src={item.heroImage} alt="Hello" className="w-50" />
-            <div className="flex gap-3 mt-5">
+          <Link
+            key={item.id}
+            to={`/product/${item.id}`}
+            className="mt-20 block cursor-pointer hover:bg-black"
+          >
+            <p className="opacity-60 ml-20">{item.title}</p>
+
+            <img
+              src={item.heroImage}
+              alt={item.title}
+              className="w-50 mx-auto"
+            />
+
+            <div className="flex gap-3 mt-5 justify-center">
               <p className="text-xl">₹{item.finalPrice}</p>
               <p className="line-through text-xl opacity-50">
                 ₹{item.originalPrice}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </Slider>
     </div>
