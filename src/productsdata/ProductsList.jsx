@@ -2,12 +2,21 @@ import { Link } from "react-router-dom";
 import productsData from "./ProductsData";
 
 export const ProductsList = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-        {productsData.map((item) => (
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 flex flex-col justify-between hover:border-red-600 transition" key={item.id}>
-            <Link to={`/product/${item.id}`} >
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+      {productsData.map((item) => (
+        <div
+          key={item.id}
+          className="bg-gray-900 border border-gray-800 rounded-lg p-4 flex flex-col justify-between hover:border-red-600 transition"
+        >
+          <Link to={`/product/${item.id}`} onClick={scrollToTop}>
             <div className="flex justify-center">
               <img
                 src={item.heroImage}
@@ -25,7 +34,6 @@ export const ProductsList = () => {
                   </span>
                 ))}
             </div>
-            </Link>
 
             <h2 className="text-white font-semibold mt-2">{item.title}</h2>
 
@@ -39,13 +47,13 @@ export const ProductsList = () => {
                 ₹{item.originalPrice}
               </span>
             </div>
+          </Link>
 
-            <button className="mt-4 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md text-sm font-medium">
-              Add to cart
-            </button>
-          </div>
-        ))}
-      </div>
-    </>
+          <button className="mt-4 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md text-sm font-medium">
+            Add to cart
+          </button>
+        </div>
+      ))}
+    </div>
   );
 };

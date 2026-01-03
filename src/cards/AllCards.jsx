@@ -13,6 +13,13 @@ export const AllCards = ({ category }) => {
     navigate("/products");
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
       {filteredProducts.map((item) => (
@@ -20,7 +27,7 @@ export const AllCards = ({ category }) => {
           key={item.id}
           className="bg-gray-900 border border-gray-800 rounded-lg p-4 flex flex-col justify-between hover:border-red-600 transition"
         >
-          <Link to={`/product/${item.id}`}>
+          <Link to={`/product/${item.id}`} onClick={scrollToTop}>
             <div className="flex justify-center">
               <img
                 src={item.heroImage}
