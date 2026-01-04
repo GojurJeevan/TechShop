@@ -2,7 +2,7 @@ import { Banner } from "../banner/Banner";
 import { SmallSlick } from "../slick/SmallSlick";
 import { Categories } from "../categories/Categories";
 import { Header } from "./Header";
-import Login from "../forms/Login";
+import { Search } from "../details/Search";
 
 
 export const Home = () => {
@@ -16,7 +16,7 @@ export const Home = () => {
       </div>
       <Categories />
       <Header />
-      <Login />
+      <Search />
     </>
   );
 };
