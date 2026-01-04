@@ -10,13 +10,13 @@ export const Home = () => {
   return (
     <>
       <Header />
+       <Search />
       <Banner />
       <div className="hidden md:block">
         <SmallSlick />
       </div>
       <Categories />
       <Header />
-      <Search />
     </>
   );
 };
