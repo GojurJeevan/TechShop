@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import productsData from "../productsdata/ProductsData";
 import { Link } from "react-router-dom";
 
@@ -6,9 +6,13 @@ export const Search = () => {
   const [search, setSearch] = useState("");
   const [dropDown, setDropDown] = useState(false);
 
-  const filterProducts = productsData.filter((product) =>
-    product.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const dataFilter = useCallback(() => {
+    return productsData.filter((product) =>
+      product.title.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search]);
+
+  const filterProducts = useMemo(()=>dataFilter(),[dataFilter])
 
   return (
     <>
@@ -34,6 +38,7 @@ export const Search = () => {
                   filterProducts.map((item) => (
                     <li
                       key={item.id}
+                      className="hover:text-red-500"
                       onClick={() => {
                         setSearch(item.title);
                         setDropDown(false);

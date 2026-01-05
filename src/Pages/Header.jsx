@@ -7,12 +7,12 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Search } from "../details/Search";
-import { SignUp } from "../forms/SignUp";
+import { AllForms } from "../forms/AllForms";
 
 export const Header = () => {
   const name = "Tech-Shop";
   const [showSearch, setShowSearch] = useState(false);
-  const [showForm,setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   return (
     <>
@@ -22,7 +22,6 @@ export const Header = () => {
         </Link>
 
         <div className="flex items-center">
-
           <div className="relative group">
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
@@ -43,24 +42,26 @@ export const Header = () => {
               icon={faCartShopping}
               className="mr-5 text-xl cursor-pointer"
             />
-            <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2
+            <span
+              className="absolute top-full left-1/2 -translate-x-1/2 mt-2
               opacity-0 group-hover:opacity-100
-              bg-black text-white text-sm px-2 py-1 rounded transition">
+              bg-black text-white text-sm px-2 py-1 rounded transition"
+            >
               Cart
             </span>
           </div>
 
-          <div className="relative group">
+          <div className="relative">
             <FontAwesomeIcon
               icon={faUser}
               className="mr-5 text-xl cursor-pointer"
-              onClick={()=>setShowForm((prev)=> !prev)}
+              onClick={() => setShowForm((prev) => !prev)}
             />
-            <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2
-              scale-0 group-hover:scale-100
-              bg-black text-white text-sm px-2 py-1 rounded transition">
-              User
-            </span>
+            {showForm && (
+              <div className="absolute right-0 mt-2 z-50">
+                <AllForms />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -68,11 +69,6 @@ export const Header = () => {
       {showSearch && (
         <div className="flex justify-center mt-4">
           <Search />
-        </div>
-      )}
-      {showForm && (
-        <div className="flex justify-center mt-4">
-          <SignUp />
         </div>
       )}
     </>
