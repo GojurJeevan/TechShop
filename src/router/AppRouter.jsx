@@ -4,6 +4,7 @@ import { Products } from "../Pages/Products"
 import { ProductsList } from "../productsdata/ProductsList"
 import { ProductData } from "../productsdata/ProductData"
 import { SignUp } from "../forms/SignUp"
+import Login from "../forms/Login"
 
 
 export const AppRouter = () =>{
@@ -15,6 +16,7 @@ export const AppRouter = () =>{
                 <Route path="/productslist" element={<ProductsList/>} />
                 <Route path="/product/:id" element={<ProductData/>}/>
                 <Route path="/signup" element={<SignUp/>} />
+                <Route path="/login" element={<Login />} />
             </Routes>
         </>
     )

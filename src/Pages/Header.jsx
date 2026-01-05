@@ -5,61 +5,76 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { Search } from "../details/Search";
+import { SignUp } from "../forms/SignUp";
 
 export const Header = () => {
+  const name = "Tech-Shop";
+  const [showSearch, setShowSearch] = useState(false);
+  const [showForm,setShowForm] = useState(false);
 
-    let name = "Tech-Shop";
+  return (
+    <>
+      <div className="flex justify-between bg-black text-white h-17 px-4">
+        <Link className="font-bold text-2xl mt-3.5" to={"/"}>
+          {name}
+        </Link>
 
-    return(
-        <>
-            <div className="flex justify-between bg-black text-white h-17">
-        <Link className="font-bold text-2xl mt-3.5" to={"/"}>{name}</Link>
-        <div className="flex">
-          <div className="relative group inline-block">
+        <div className="flex items-center">
+
+          <div className="relative group">
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
-              className="mr-5 mt-4 text-xl cursor-pointer"
+              className="mr-5 text-xl cursor-pointer"
+              onClick={() => setShowSearch((prev) => !prev)}
             />
             <span
-              className=" absolute top-full left-1/2 -translate-x-1/2 mt-2
-        scale-0 group-hover:scale-100
-        bg-black text-white text-sm px-2 py-1 rounded
-        transition"
+              className="absolute top-full left-1/2 -translate-x-1/2 mt-2
+              scale-0 group-hover:scale-100
+              bg-black text-white text-sm px-2 py-1 rounded transition"
             >
               Search
             </span>
           </div>
-          <div className="relative group inline-block">
+
+          <div className="relative group">
             <FontAwesomeIcon
               icon={faCartShopping}
-              className="mr-5 mt-4 text-xl cursor-pointer"
+              className="mr-5 text-xl cursor-pointer"
             />
-            <span
-              className=" absolute top-full left-1/2 -translate-x-1/2 mt-2
-        opacity-0 group-hover:opacity-100
-        bg-black text-white text-sm px-2 py-1 rounded
-        transition"
-            >
+            <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2
+              opacity-0 group-hover:opacity-100
+              bg-black text-white text-sm px-2 py-1 rounded transition">
               Cart
             </span>
           </div>
-          <div className="relative group inline-block">
+
+          <div className="relative group">
             <FontAwesomeIcon
               icon={faUser}
-              className="mr-5 mt-4 text-xl cursor-pointer"
+              className="mr-5 text-xl cursor-pointer"
+              onClick={()=>setShowForm((prev)=> !prev)}
             />
-            <span
-              className=" absolute top-full left-1/2 -translate-x-1/2 mt-2
-        scale-0 group-hover:scale-100
-        bg-black text-white text-sm px-2 py-1 rounded
-        transition"
-            >
+            <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2
+              scale-0 group-hover:scale-100
+              bg-black text-white text-sm px-2 py-1 rounded transition">
               User
             </span>
           </div>
         </div>
       </div>
-        </>
-    )
-}
+
+      {showSearch && (
+        <div className="flex justify-center mt-4">
+          <Search />
+        </div>
+      )}
+      {showForm && (
+        <div className="flex justify-center mt-4">
+          <SignUp />
+        </div>
+      )}
+    </>
+  );
+};
