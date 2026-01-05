@@ -2,13 +2,12 @@ import { useParams } from "react-router-dom";
 import productsData from "./ProductsData";
 import { Details } from "../details/Details";
 import { RelatedProducts } from "../related/RelatedProducts";
-import { useDispatch } from "react-redux";
 import { ADDTOCART } from "../cart/CartSlice";
-import { Header } from "../pages/Header";
+import { Header } from "../Pages/Header";
+
 
 export const ProductData = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
 
   const product = productsData.find((item) => item.id === Number(id));
 

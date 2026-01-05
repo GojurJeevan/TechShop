@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import productsData from "../productsdata/ProductsData";
-import { useDispatch } from "react-redux";
 
 export const AllCards = ({ category }) => {
   const filteredProducts =
@@ -9,7 +8,6 @@ export const AllCards = ({ category }) => {
       : productsData.filter((item) => item.category === category);
 
   let navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const submitButton = () => {
     navigate("/products");
