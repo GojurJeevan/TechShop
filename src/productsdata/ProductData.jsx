@@ -2,12 +2,14 @@ import { useParams } from "react-router-dom";
 import productsData from "./ProductsData";
 import { Details } from "../details/Details";
 import { RelatedProducts } from "../related/RelatedProducts";
-import { ADDTOCART } from "../cart/CartSlice";
 import { Header } from "../Pages/Header";
-
+import { ADDTOCART } from "../cart/CartSlice";
+import { useDispatch } from "react-redux";
 
 export const ProductData = () => {
   const { id } = useParams();
+
+  let dispatch = useDispatch();
 
   const product = productsData.find((item) => item.id === Number(id));
 
@@ -17,7 +19,7 @@ export const ProductData = () => {
 
   return (
     <>
-    <Header />
+      <Header />
       <div className="flex ml-20">
         <div>
           {product.images.map((item, index) => (
@@ -86,17 +88,7 @@ export const ProductData = () => {
           </div>
           <div className="border mt-8 opacity-20 w-md font-extralight"></div>
           <div className="my-10">
-            <button
-              className="w-50 h-10 bg-red-700 rounded cursor-pointer"
-              onClick={() =>
-                dispatch(
-                  ADDTOCART({
-                    ...product,
-                    price: product.finalPrice,
-                  })
-                )
-              }
-            >
+            <button className="w-50 h-10 bg-red-700 rounded cursor-pointer" onClick={()=>dispatch(ADDTOCART({...product,quantity:1}))}>
               Add to Cart
             </button>
           </div>

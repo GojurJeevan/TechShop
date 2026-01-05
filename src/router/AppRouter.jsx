@@ -5,6 +5,7 @@ import { ProductsList } from "../productsdata/ProductsList"
 import { ProductData } from "../productsdata/ProductData"
 import { SignUp } from "../forms/SignUp"
 import Login from "../forms/Login"
+import { Cart } from "../cart/Cart"
 
 
 export const AppRouter = () =>{
@@ -17,6 +18,7 @@ export const AppRouter = () =>{
                 <Route path="/product/:id" element={<ProductData/>}/>
                 <Route path="/signup" element={<SignUp/>} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/cart" element={<Cart />} />
             </Routes>
         </>
     )
