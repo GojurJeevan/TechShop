@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import productsData from "./ProductsData";
+import { useDispatch } from "react-redux";
+import { ADDTOCART } from "../cart/CartSlice";
 
 export const ProductsList = () => {
   const scrollToTop = () => {
@@ -8,6 +10,8 @@ export const ProductsList = () => {
       behavior: "smooth",
     });
   };
+
+  const dispatch = useDispatch();
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
@@ -49,7 +53,17 @@ export const ProductsList = () => {
             </div>
           </Link>
 
-          <button className="mt-4 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md text-sm font-medium">
+          <button
+            className="mt-4 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md text-sm font-medium"
+            onClick={() =>
+              dispatch(
+                ADDTOCART({
+                  ...item,
+                  price: item.finalPrice,
+                })
+              )
+            }
+          >
             Add to cart
           </button>
         </div>

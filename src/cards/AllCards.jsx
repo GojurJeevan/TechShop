@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import productsData from "../productsdata/ProductsData";
+import { useDispatch } from "react-redux";
 
 export const AllCards = ({ category }) => {
   const filteredProducts =
@@ -8,6 +9,7 @@ export const AllCards = ({ category }) => {
       : productsData.filter((item) => item.category === category);
 
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const submitButton = () => {
     navigate("/products");
@@ -17,8 +19,8 @@ export const AllCards = ({ category }) => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    })
-  }
+    });
+  };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
@@ -60,7 +62,17 @@ export const AllCards = ({ category }) => {
             </span>
           </div>
 
-          <button className="mt-4 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md text-sm font-medium">
+          <button
+            className="mt-4 bg-red-600 hover:bg-red-700 text-white py-2 rounded-md text-sm font-medium"
+            onClick={() =>
+              dispatch(
+                ADDTOCART({
+                  ...item,
+                  price: item.finalPrice,
+                })
+              )
+            }
+          >
             Add to cart
           </button>
         </div>

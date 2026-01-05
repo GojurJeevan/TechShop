@@ -1,17 +1,13 @@
-import './App.css'
-import { MainLayout } from './layout/MainLayout'
-import { Footer } from './footer/Footer'
-import { Services } from './services/Services'
+import "./App.css";
+import { Footer } from "./footer/Footer";
+import { AppRouter } from "./router/AppRouter";
 
 
-export const App = () =>{
-  return(
-    <>
-        <div className='bg-black text-white'>
-          <MainLayout />
-          <Services />
-          <Footer />
-        </div>
-    </>
-  )
-}
+export const App = () => {
+  return (
+    <div className="bg-black text-white min-h-screen flex flex-col">
+      <AppRouter />
+      <Footer />
+    </div>
+  );
+};

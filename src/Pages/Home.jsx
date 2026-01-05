@@ -8,7 +8,7 @@ export const Home = () => {
 
   return (
     <>
-      <Header />
+    <Header />
       <Banner />
       <div className="hidden md:block">
         <SmallSlick />

@@ -8,11 +8,16 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Search } from "../details/Search";
 import { AllForms } from "../forms/AllForms";
+import { Cart } from "../cart/Cart";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
   const name = "Tech-Shop";
   const [showSearch, setShowSearch] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [cart, setCart] = useState(false);
+  const cartItems = useSelector((state) => state.cart);
+  const cartCount = cartItems.length;
 
   return (
     <>
@@ -41,14 +46,13 @@ export const Header = () => {
             <FontAwesomeIcon
               icon={faCartShopping}
               className="mr-5 text-xl cursor-pointer"
+              onClick={() => setCart((prev) => !prev)}
             />
-            <span
-              className="absolute top-full left-1/2 -translate-x-1/2 mt-2
-              opacity-0 group-hover:opacity-100
-              bg-black text-white text-sm px-2 py-1 rounded transition"
-            >
-              Cart
-            </span>
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                {cartCount}
+              </span>
+            )}
           </div>
 
           <div className="relative">
@@ -71,6 +75,7 @@ export const Header = () => {
           <Search />
         </div>
       )}
+      {cart && <Cart />}
     </>
   );
 };

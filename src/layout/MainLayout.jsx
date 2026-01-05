@@ -1,9 +1,12 @@
-import { AppRouter } from "../router/AppRouter"
+import { Outlet } from "react-router-dom";
+import { Header } from "../Pages/Header";
 
-export const MainLayout = () =>{
-    return(
-        <>
-            <AppRouter />
-        </>
-    )
-}
+
+export const MainLayout = () => {
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
+};
