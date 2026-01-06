@@ -4,6 +4,7 @@ import { Header } from "./Header";
 export const Products = () => {
   return (
     <>
+      <Header />
       <ProductsList />
       <Header />
     </>
