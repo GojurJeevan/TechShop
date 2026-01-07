@@ -18,16 +18,16 @@ export const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between bg-black text-white h-17 px-4">
-        <Link className="font-bold text-2xl mt-3.5" to={"/"}>
+      <div className="flex items-center justify-between bg-black text-white px-4 sm:px-6 lg:px-12 py-3">
+        <Link className="font-bold text-lg sm:text-xl lg:text-2xl" to={"/"}>
           {name}
         </Link>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-4 sm:gap-6">
           <div className="relative group">
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
-              className="mr-5 text-xl cursor-pointer"
+              className="ext-lg sm:text-xl cursor-pointer"
               onClick={() => setShowSearch((prev) => !prev)}
             />
             <span
@@ -42,7 +42,7 @@ export const Header = () => {
           <Link className="relative group" to={"/cart"}>
             <FontAwesomeIcon
               icon={faCartShopping}
-              className="mr-5 text-xl cursor-pointer"
+              className="text-lg sm:text-xl cursor-pointer"
             />
             {cartData.length > 0 && (
               <span className="absolute -top-2 -right-1 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
@@ -54,7 +54,7 @@ export const Header = () => {
           <div className="relative">
             <FontAwesomeIcon
               icon={faUser}
-              className="mr-5 text-xl cursor-pointer"
+              className="text-lg sm:text-xl cursor-pointer"
               onClick={() => setShowForm((prev) => !prev)}
             />
             {showForm && (

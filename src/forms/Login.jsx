@@ -52,7 +52,7 @@ export default function Login() {
     <FormLayout>
       <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-50">
         <div className=" flex items-center justify-center p-4">
-          <div className="shadow-xl rounded-xl p-8 w-full max-w-md bg-gray-400">
+          <div className="bg-gray-400 shadow-xl rounded-xl p-6 sm:p-8 w-full max-w-md">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
               Login
             </h2>

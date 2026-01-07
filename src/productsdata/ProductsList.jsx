@@ -1,21 +1,11 @@
 import { Link } from "react-router-dom";
 import productsData from "./ProductsData";
-import FilterCanvas from "../filtercanvas/FilterCanvas";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ADDTOCART } from "../cart/CartSlice";
 
 export const ProductsList = () => {
-  const [openFilter, setOpenFilter] = useState(false);
-  const [selectedBrand, setSelectedBrand] = useState(null);
 
   let dispatch = useDispatch();
-
-  const filteredProducts = selectedBrand
-    ? productsData.filter(
-        (item) => item.brand.toLowerCase() === selectedBrand.toLowerCase()
-      )
-    : productsData;
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -26,22 +16,9 @@ export const ProductsList = () => {
 
   return (
     <>
-      <div className="flex justify-end px-6 pt-4">
-        <button
-          onClick={() => setOpenFilter(true)}
-          className="border w-20 py-2 bg-gray-900 text-white rounded hover:bg-red-600"
-        >
-          Filter
-        </button>
-      </div>
-
-      <FilterCanvas
-        open={openFilter}
-        setOpen={setOpenFilter}
-        setSelectedBrand={setSelectedBrand}
-      />
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-        {filteredProducts.map((item) => (
+    <p className="text-3xl text-center font-bold">Products</p>
+      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-6 lg:px-10">
+        {productsData.map((item) => (
           <div
             key={item.id}
             className="bg-gray-900 border border-gray-800 rounded-lg p-4 flex flex-col justify-between hover:border-red-600 transition"

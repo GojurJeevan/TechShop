@@ -7,7 +7,7 @@ export const Services = () => {
         <div className="text-center font-bold opacity-70">
           <p className="text-3xl">Our Advantages</p>
         </div>
-        <div className="flex justify-evenly">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 sm:px-6 lg:px-16">
           {servicesData.map((item) => (
             <div className="flex gap-4 mt-30 mb-20" key={item.id}>
               <div className="text-5xl text-red-600">{item.icon}</div>

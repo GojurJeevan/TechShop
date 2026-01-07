@@ -17,47 +17,42 @@ const CartSlice = createSlice({
 
   reducers: {
     ADDTOCART: (state, action) => {
-      const products = action.payload;
-      const existingProducts = state.find((item) => item.id == products.id);
-      if (existingProducts) {
-        existingProducts.quantity += 1;
+      const product = action.payload;
+      const existing = state.find((item) => item.id === product.id);
+
+      if (existing) {
+        existing.quantity += 1;
       } else {
-        state.push(products);
+        state.push({ ...product, quantity: 1 });
       }
+
       localStorage.setItem("userData", JSON.stringify(state));
     },
 
     REMOVE: (state, action) => {
-      const productId = action.payload;
-      const updateCart = state.filter((item) => item.id != productId);
-      localStorage.setItem("userData", updateCart);
-      return updateCart;
+      const updated = state.filter((item) => item.id !== action.payload);
+      localStorage.setItem("userData", JSON.stringify(updated));
+      return updated;
     },
 
     INC: (state, action) => {
-      const id = action.payload;
-      const product = state.find((item) => item.id === id);
-
-      if (product) {
-        product.quantity += 1;
-      }
-
+      const product = state.find((item) => item.id === action.payload);
+      if (product) product.quantity += 1;
       localStorage.setItem("userData", JSON.stringify(state));
     },
 
     DEC: (state, action) => {
-      const id = action.payload;
-      const product = state.find((item) => item.id === id);
+      const index = state.findIndex((item) => item.id === action.payload);
 
-      if (product) {
-        product.quantity -= 1;
+      if (index !== -1) {
+        if (state[index].quantity > 1) {
+          state[index].quantity -= 1;
+        } else {
+          state.splice(index, 1);
+        }
       }
 
-      if(product && product.quantity === 0){
-        const index = state.find((item) => item.id === id)
-        state.splice(index,1);
-      }
-      localStorage.setItem("userCart", JSON.stringify(state));
+      localStorage.setItem("userData", JSON.stringify(state));
     },
   },
 });

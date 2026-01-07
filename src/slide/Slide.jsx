@@ -31,7 +31,7 @@ export default function Slide() {
       <Slider {...settings}>
         {finalTagline.map(item =>
          <div key={item.id}>
-            <div className="flex justify-evenly mt-20">
+            <div className="flex flex-col-reverse lg:flex-row justify-evenly gap-10 px-4 sm:px-6 lg:px-20 mt-10">
               <div>
                 <p className="text-2xl opacity-60">{item.title}</p>
                 <p className="text-4xl font-bold">{item.tagline}</p>
@@ -42,7 +42,7 @@ export default function Slide() {
                 <button className="mt-5 border border-red-700 bg-red-700 rounded h-10 w-30 cursor-pointer" onClick={()=>shopProduct(item.id)}>Shop Now</button>
               </div>
               <div>
-                <img src={item.heroImage} alt="" className="h-100"/>
+                <img src={item.heroImage} alt="" className="w-full max-w-md"/>
               </div>
             </div>
          </div> 

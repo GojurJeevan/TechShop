@@ -5,6 +5,7 @@ import { RelatedProducts } from "../related/RelatedProducts";
 import { Header } from "../Pages/Header";
 import { ADDTOCART } from "../cart/CartSlice";
 import { useDispatch } from "react-redux";
+import { Services } from "../services/Services";
 
 export const ProductData = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ export const ProductData = () => {
   return (
     <>
       <Header />
-      <div className="flex ml-20">
+      <div className="flex flex-col lg:flex-row gap-6 px-4 sm:px-6 lg:px-16">
         <div>
           {product.images.map((item, index) => (
             <img
@@ -50,7 +51,7 @@ export const ProductData = () => {
               <p className="opacity-80 font-light">{product.ratings} Ratings</p>
             </div>
             <div className="border mt-8 opacity-20 w-md font-extralight"></div>
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-6">
               <div>
                 <div className="flex gap-3">
                   <p className="font-extrabold text-3xl mt-4 opacity-85">
@@ -88,7 +89,10 @@ export const ProductData = () => {
           </div>
           <div className="border mt-8 opacity-20 w-md font-extralight"></div>
           <div className="my-10">
-            <button className="w-50 h-10 bg-red-700 rounded cursor-pointer" onClick={()=>dispatch(ADDTOCART({...product,quantity:1}))}>
+            <button
+              className="w-50 h-10 bg-red-700 rounded cursor-pointer"
+              onClick={() => dispatch(ADDTOCART({ ...product, quantity: 1 }))}
+            >
               Add to Cart
             </button>
           </div>
@@ -97,6 +101,7 @@ export const ProductData = () => {
       <Details />
 
       <RelatedProducts />
+      <Services />
     </>
   );
 };

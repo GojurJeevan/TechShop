@@ -54,7 +54,7 @@ export const SignUp = () => {
     <FormLayout>
       <div className="fixed inset-0 bg-black/40 backdrop-blur-md flex items-center justify-center z-50">
         <div className=" flex items-center justify-center">
-          <div className="bg-gray-400 shadow-xl rounded-xl p-8 w-100">
+          <div className="bg-gray-400 shadow-xl rounded-xl p-6 sm:p-8 w-full max-w-md">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
               Create Account
             </h2>
